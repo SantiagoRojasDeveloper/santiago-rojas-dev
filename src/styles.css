@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#title-name{
+    margin: 0;
+    white-space: nowrap;
+    height: fit-content;
+    border-right: 2px solid white;
+    padding-right: 1rem;
+    animation: typing 2s infinite;
+}
+
+@keyframes typing {
+    0% {
+        border-color: transparent;
+    }
+    50%{
+        border-color: white;
+    }
+    100% {
+        border-color: transparent;
+    }
+}
+
+#all-container{
+    background-color: #222;
+    background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57));
+}
