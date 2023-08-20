@@ -91,13 +91,13 @@ export class LoginComponent implements OnInit {
         show = true;
       }
 
-      if(counter == 10000){
+      if(counter == 15000){
         clearInterval(this.lettersInterval);
         this.nextWindow();
       }else{
         counter += 1000;
       }
-    }, 500);
+    }, 1000);
   }
 
   private showTitle(){
