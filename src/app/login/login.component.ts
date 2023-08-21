@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   @HostListener('window:click', ['$event'])
+  @HostListener('window:touchstart', ['$event'])
   onClick(event: MouseEvent) {
     this.nextWindow();
   }
