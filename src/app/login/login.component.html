@@ -1,3 +1,7 @@
+<div [hidden]="titleUni == undefined" *ngFor="let image of images" class="position-absolute w-100 h-50">
+    <img [id]="image.name" [src]="'../../assets/img/'+image.src" class="position-absolute" style="filter: grayscale(1) brightness(100); left: -50%;" [style.height]="image.height" [style.top]="image.top">
+</div>
+
 <div class="position-absolute text-start w-100 h-100 d-flex justify-content-start align-items-center px-5">
     <h1 id="title-name" class="text-light display-1">{{ splitedName }}</h1>
 </div>

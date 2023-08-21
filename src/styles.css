@@ -85,3 +85,21 @@ html, body {
         transform: translate(-200%);
     }
 }
+
+.slideRightVelOne{
+    animation: slideRight 10s ease infinite;
+}
+
+.slideRightVelTwo{
+    animation: slideRight 8s ease-in-out infinite;
+}
+
+.slideRightVelThree{
+    animation: slideRight 5s ease-in infinite;
+}
+
+@keyframes slideRight {
+    to{
+        left: 100%;
+    }
+}

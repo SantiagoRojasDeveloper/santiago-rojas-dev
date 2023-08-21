@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   public splitedName: string;
   public titleUni: string | undefined;
   public titleFull: string | undefined;
+  public images: any[];
   private randomLetters: Array<string>;
 
   //Intervalos
@@ -23,6 +24,12 @@ export class LoginComponent implements OnInit {
     this.splitedName = "";
     this.titleUni = undefined;
     this.titleFull = undefined;
+    this.images = [
+      {src: "angular-icon.webp", class: "", name: "Angular", top: "", height: ""},
+      {src: "mysql-icon.webp", class: "", name: "MySql", top: "", height: ""},
+      {src: "java-icon.webp", class: "", name: "Java", top: "", height: ""},
+      {src: "js-icon.webp", class: "", name: "Js", top: "", height: ""}
+    ];
     this.randomLetters = ["$","%","!","°",";",";",";","$","&","/","(",")","?","¿","¡","1","2",
                           "3","4","5","6","7","8","9","0",":",".","-","_"];
   }
@@ -66,6 +73,7 @@ export class LoginComponent implements OnInit {
   
     const line = document.getElementById("line") as HTMLDivElement;
     line.classList.add("slideForceLeft");
+
     await this.pause(3000);
     this.name = "";
     this.splitedName = "";
@@ -77,11 +85,12 @@ export class LoginComponent implements OnInit {
   }
 
   private showAndHidePipe(show: boolean){ 
+    this.addIconsStyle();
     let counter: number = 0;
     this.lettersInterval = setInterval(() => {
       this.splitedName = this.splitedName.replace(/\|/g , "");
       if(show){
-        this.splitedName += " |";
+        this.splitedName += "|";
         show = false;
       }else{
         this.splitedName = this.name;
@@ -98,6 +107,31 @@ export class LoginComponent implements OnInit {
         counter += 1000;
       }
     }, 1000);
+  }
+
+  private addIconsStyle(){
+    let counterTop: number = 0;
+    const valueToAddTop: number = 75/this.images.length;
+    this.images.forEach(image => {
+      image.top = counterTop+"%";
+      counterTop += valueToAddTop;
+
+      image.height = valueToAddTop+"% !important";
+
+      const velocity: number = this.getRandomNumber(1, 3);
+      const img = document.getElementById(image.name) as HTMLImageElement;
+      if(velocity == 1){
+        image.class = "slideRightVelOne";
+        img.classList.add(image.class);
+      }else if(velocity == 2){
+        image.class = "slideRightVelTwo";
+        img.classList.add(image.class);
+      }else{
+        image.class = "slideRightVelThree";
+        img.classList.add(image.class);
+      }
+
+    });
   }
 
   private showTitle(){
