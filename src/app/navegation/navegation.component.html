@@ -1,0 +1,7 @@
+<div class="w-100 d-flex gap-2">
+    <button [ngStyle]="{ 'background-color': option.active ? '#24132E' : '#222' }" class="w-100 btn btn-dark"
+        [ngStyle]="{ 'font-size': option.active ? '20px' : '10px' }"
+        (click)="changeWindow(option.value)" *ngFor="let option of options">
+        {{option.name}}
+    </button>
+</div>

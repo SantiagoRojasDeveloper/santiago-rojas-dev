@@ -26,9 +26,13 @@ export class LoginComponent implements OnInit {
     this.titleFull = undefined;
     this.images = [
       {src: "angular-icon.webp", class: "", name: "Angular", top: "", height: ""},
+      {src: "ts-icon.webp", class: "", name: "Ts", top: "", height: ""},
+      {src: "springboot-icon.webp", class: "", name: "Springboot", top: "", height: ""},
       {src: "mysql-icon.webp", class: "", name: "MySql", top: "", height: ""},
+      {src: "react-icon.webp", class: "", name: "React", top: "", height: ""},
+      {src: "node-icon.webp", class: "", name: "Node", top: "", height: ""},
       {src: "java-icon.webp", class: "", name: "Java", top: "", height: ""},
-      {src: "js-icon.webp", class: "", name: "Js", top: "", height: ""}
+      {src: "git-icon.webp", class: "", name: "Git", top: "", height: ""},
     ];
     this.randomLetters = ["$","%","!","°",";",";",";","$","&","/","(",")","?","¿","¡","1","2",
                           "3","4","5","6","7","8","9","0",":",".","-","_"];
@@ -111,11 +115,11 @@ export class LoginComponent implements OnInit {
   }
 
   private addIconsStyle(){
-    let counterTop: number = 0;
-    const valueToAddTop: number = 75/this.images.length;
+    let counterTop: number = -5;
+    const valueToAddTop: number = 100/this.images.length;
     this.images.forEach(image => {
       image.top = counterTop+"%";
-      counterTop += valueToAddTop;
+      counterTop += valueToAddTop + 1;
 
       image.height = valueToAddTop+"% !important";
 

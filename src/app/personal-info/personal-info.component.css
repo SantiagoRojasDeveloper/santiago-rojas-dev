@@ -1,0 +1,19 @@
+#container{
+    animation: line 1s ease forwards;
+}
+
+@keyframes line {
+    to{
+        top: 5%;
+    }
+}
+
+.slide-container{
+    animation: slide-container 1s ease forwards;
+}
+
+@keyframes slide-container {
+    to{
+        margin-left: 0%;
+    }
+}
